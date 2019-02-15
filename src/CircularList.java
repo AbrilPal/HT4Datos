@@ -75,7 +75,14 @@ public class CircularList <E> extends AbstractList <E>
 
     @Override
     public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(tail != null) {
+            Nodo<E> finger = tail;
+            while (finger.next() != tail) {
+                finger = finger.next();
+            }
+            return finger.value();
+        }
+        return tail.value();
     }
 
     @Override

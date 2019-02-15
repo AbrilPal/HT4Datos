@@ -26,4 +26,14 @@ public class Calculator{
         }
         return resultado;
     }
+
+    /*private synchronized static void createInstance(){
+        if (calculator == null){
+            calculator = new Calculator();
+        }
+    }
+    public static Calculator getInstance(){
+        createInstance();
+        return calculator;
+    }*/
 }

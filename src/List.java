@@ -1,4 +1,3 @@
-import java.util.Iterator;
 /**
  *
  * @author Marco Fuentes, copiado de Canvas

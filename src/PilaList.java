@@ -17,7 +17,7 @@ public class PilaList<E> extends AbstractPila<E> {
 
     @Override
     public void push(E item) {
-        lista.add(item);
+        lista.addLast(item);
     }
 
     @Override

@@ -1,4 +1,3 @@
-import java.util.Iterator;
 
 
 /**
@@ -16,12 +15,14 @@ public class SingleLinkedList <E> extends AbstractList <E> {
      * El primer elemento de la lista
      */
     protected Nodo <E> head;
+    protected Nodo <E> tail;
 
     /**
      * Constructor
      */
     public SingleLinkedList(){
         head = null;
+        tail = null;
         count =0;
     }
     public int size()
@@ -74,7 +75,6 @@ public class SingleLinkedList <E> extends AbstractList <E> {
         } else head = temp;
 
         count++;
-
     }
 
 
@@ -99,12 +99,35 @@ public class SingleLinkedList <E> extends AbstractList <E> {
 
     @Override
     public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(head != null){
+            Nodo finger = head;
+            while(finger.next() != null){
+                finger = finger.next();
+            }
+            return (E) finger.value();
+        }
+        return head.value();
     }
+
 
     @Override
     public E removeLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Nodo<E> finger = head;
+        Nodo<E> previous = null;
+        while (finger.next() != null){
+            previous = finger;
+            finger =finger.next();
+        }
+        while (finger.next() != tail) {
+            finger = finger.next();
+        }
+        if (previous == null){
+            head = null;
+        }else{
+            previous.setNext(null);
+        }
+        count--;
+        return finger.value();
     }
 
     @Override

@@ -28,7 +28,7 @@ public class Maim {
         ArrayList<String> arreglo = new ArrayList<String>();
         try {
             Stream<String> lines = Files.lines(
-                    Paths.get(System.getProperty("user.dir") + "\\datos.txt"),
+                    Paths.get(System.getProperty("user.dir") + "\\src\\datos.txt"),
                     StandardCharsets.UTF_8
             );
             lines.forEach(a -> arreglo.add(a));
@@ -54,6 +54,23 @@ public class Maim {
             op = scanner.nextLine();
             FactoryStak obj1 = new FactoryStak();
             Stack lista = obj1.factoryStack(op);
+            Calculator calculator = new Calculator();
+            for (int car = 0; car < operacion.size(); car++) {
+                int num;
+                String caracter = operacion.get(car);
+                try {
+                    num = Integer.parseInt(caracter);
+                    lista.push(num);
+                } catch (Exception e) {
+                    if (!caracter.equals(" ")) {
+                        int num1 = (int) lista.pop();
+                        int num2 = (int) lista.pop();
+                        int resultado = calculator.calculate(num2, num1, caracter);
+                        lista.push(resultado);
+                    }
+                }
+            }
+            System.out.println("resultado = " + lista.peek());
         }
     }
 }
