@@ -3,8 +3,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Marco Fuentes
- * @param <E>
+ * @since 15/02/2019
+ * @author Marco Fuentes y Abril Palencia
+ * @param <E> valor generico
  *
  */
 

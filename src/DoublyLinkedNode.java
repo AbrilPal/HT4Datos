@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ * @since 15/02/2019
  * @author fuent
  */
 public class DoublyLinkedNode <E>
@@ -14,6 +14,12 @@ public class DoublyLinkedNode <E>
     protected DoublyLinkedNode<E> nextElement;
     protected DoublyLinkedNode<E> previousElement;
 
+    /**
+     * Metodo DoublyLinkedNode
+     * @param v
+     * @param next
+     * @param previous
+     */
     public DoublyLinkedNode(E v,
                             DoublyLinkedNode<E> next,
                             DoublyLinkedNode<E> previous)
@@ -38,11 +44,20 @@ public class DoublyLinkedNode <E>
     public DoublyLinkedNode<E> next(){
         return nextElement;
     }
+
+    /**
+     * devuelve el elento previo.
+     * @return
+     */
     public DoublyLinkedNode<E> previous(){
         return previousElement;
     }
+
+    /**
+     * coloca el valor siguiente del nodo.
+     * @param e
+     */
     public void setNext(DoublyLinkedNode<E> e){
         nextElement = e;
-        e.previousElement=this;
     }
 }

@@ -7,14 +7,26 @@ License Headers in Project Properties.
 
 
 /**
+ *  Clase AbstractPila
+ *  clase abstracta de pilas, encargada de verificar el funcionamiento basico de una pila.
  *
- * @author Marco Fuentes
+ * @author Marco Fuentes y Abril Palencia
+ * @since 15/02/2019
  *
  */
 
 public abstract class AbstractPila <E> implements Stack<E> {
+    /**
+     * AbstractPila
+     * no defiido.
+     */
     public AbstractPila(){}
 
+    /**
+     * isEmpty
+     * verifica si esta vacio.
+     * @return
+     */
     public boolean isEmpty(){
         return empty();
     }

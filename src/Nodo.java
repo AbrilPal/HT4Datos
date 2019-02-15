@@ -1,6 +1,6 @@
 
 /**
- *
+ * @since 15/02/2019
  * @author fuent
  */
 public class Nodo <E> {

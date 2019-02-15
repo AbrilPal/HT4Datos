@@ -118,9 +118,6 @@ public class SingleLinkedList <E> extends AbstractList <E> {
             previous = finger;
             finger =finger.next();
         }
-        while (finger.next() != tail) {
-            finger = finger.next();
-        }
         if (previous == null){
             head = null;
         }else{

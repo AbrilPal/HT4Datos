@@ -1,7 +1,12 @@
 /**
- * Esta es la clase que implementa los metodos de la interfaz calculator
+ * Clase Calculator
+ * Esta encargada de hacer todas las operaciones matematicas definidas en la hoja de trabajo.
+ *
+ * @author Abril Palencia y Marco Fuentes
+ * @since 15/02/2019
  */
 public class Calculator{
+    private static Calculator calcu;
     /**
      * Este es el metodo que permite que se realicen las operaciones
      * @param num1
@@ -16,24 +21,36 @@ public class Calculator{
             resultado = num1 + num2;
         }
         else if (op.equals("-")){
-            resultado = num2 - num1;
+            resultado = num1 - num2;
         }
         else if (op.equals("*")){
             resultado = num1 * num2;
         }
         else if (op.equals("/")){
-            resultado = num2 / num1;
+            if (num2 != 0){
+                resultado = num1 / num2;
+            }else{
+                return 0;
+            }
         }
         return resultado;
     }
 
-    /*private synchronized static void createInstance(){
-        if (calculator == null){
-            calculator = new Calculator();
+    /**
+     * Metodo Singleton
+     * para que no se repitan instancias.
+     */
+    private synchronized static void createInstance(){
+        if (calcu == null){
+            calcu = new Calculator();
         }
     }
+    /**
+     * Metodo Singleton
+     * para que no se repitan instancias.
+     */
     public static Calculator getInstance(){
         createInstance();
-        return calculator;
-    }*/
+        return calcu;
+    }
 }

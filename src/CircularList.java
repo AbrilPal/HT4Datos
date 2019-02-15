@@ -1,5 +1,6 @@
 /**
- *
+ *Clase CircularList
+ * encargada de operar listas circulares. tipo de listas, no todos los metodos estan definidos porque no se utilizaron.
  * @author fuent
  */
 public class CircularList <E> extends AbstractList <E>
@@ -7,6 +8,10 @@ public class CircularList <E> extends AbstractList <E>
     protected Nodo<E> tail;
     protected int count;
 
+    /**
+     * Constructor CircularList
+     * asina los valores iniciales de tail y el contador.
+     */
     public CircularList()
 // pre: constructs a new circular list
     {
@@ -24,6 +29,11 @@ public class CircularList <E> extends AbstractList <E>
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * Metodo addFirst
+     * encargado de colocar un nuevo elemento al comienzo de la lista.
+     * @param value
+     */
     public void addFirst(E value) {
         Nodo<E> temp = new Nodo<E>(value);
         if (tail == null) { // first value added
@@ -35,6 +45,12 @@ public class CircularList <E> extends AbstractList <E>
         }
         count++;
     }
+
+    /**
+     * Metodo addLast.
+     * encargado de recorrer la lista y depositar elnnuevo valor al final
+     * @param value
+     */
     public void addLast(E value)
 // pre: value non-null
 // post: adds element to tail of list
@@ -47,6 +63,11 @@ public class CircularList <E> extends AbstractList <E>
 
 // lo dificil es quitar el elemento de la cola
 
+    /**
+     * Metodo removeLast.
+     * eliminar o sacar el ultimo elemento de la lista.
+     * @return
+     */
     public E removeLast()
 // pre: !isEmpty()
 // post: returns and removes value from tail of list
@@ -74,6 +95,10 @@ public class CircularList <E> extends AbstractList <E>
     }
 
     @Override
+    /**
+     * Metodo getLast
+     * encuentra el ultimo elemento de la lista.
+     */
     public E getLast() {
         if(tail != null) {
             Nodo<E> finger = tail;

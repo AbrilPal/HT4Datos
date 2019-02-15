@@ -1,6 +1,8 @@
 /**
- *
- * @author Marco Fuentes, copiado de Canvas
+ *Interfaz List
+ * define todos los metodos que nensecita implementar todas las listas, sin importar eltipo de la lista.
+ * @author Marco Fuentes y Abril Palencia, copiado de Canvas
+ * @since 15/02/2019
  */
 public interface List <E> {
     public int size();

@@ -22,9 +22,7 @@ public class PilaList<E> extends AbstractPila<E> {
 
     @Override
     public E pop() {
-        E ultimoElemento = (E) lista.getLast();
-        lista.removeLast();
-        return ultimoElemento;
+        return (E) lista.removeLast();
     }
 
     @Override

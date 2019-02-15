@@ -8,13 +8,21 @@ public class DoublyLinkedList <E> extends AbstractList <E>
     protected DoublyLinkedNode<E> head;
     protected DoublyLinkedNode<E> tail;
 
+    /**
+     * Constructor
+     * define el valor de los atributos y variables.
+     */
     public DoublyLinkedList() // post: constructs an empty list
     {
         head = null;
         tail = null;
         count = 0;
     }
-
+    /**
+     * Metodo addFirst
+     * encargado de colocar un nuevo elemento al comienzo de la lista.
+     * @param value
+     */
     public void addFirst(E value)
 // pre: value is not null
 // post: adds element to head of list
@@ -26,7 +34,11 @@ public class DoublyLinkedList <E> extends AbstractList <E>
         count++;
     }
 
-
+    /**
+     * Metodo addLast.
+     * encargado de recorrer la lista y depositar elnnuevo valor al final
+     * @param value
+     */
     public void addLast(E value)
 // pre: value is not null
 // post: adds new value to tail of list
@@ -38,7 +50,10 @@ public class DoublyLinkedList <E> extends AbstractList <E>
         count++;
     }
 
-
+    /**
+     * Metodo addFirst
+     * encargado de colocar un nuevo elemento al comienzo de la lista.
+     */
     public E removeLast()
 // pre: list is not empty
 // post: removes value from tail of list
@@ -71,14 +86,7 @@ public class DoublyLinkedList <E> extends AbstractList <E>
 
     @Override
     public E getLast() {
-        DoublyLinkedNode<E> temp = tail;
-        tail = tail.previous();
-        if (tail == null) {
-            head = null;
-        } else{
-            return temp.value();
-        }
-        return tail.value();
+        return (E) tail.value();
     }
 
     @Override

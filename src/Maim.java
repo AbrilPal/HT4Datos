@@ -1,4 +1,10 @@
-
+/**
+ * Clase Maim.
+ * clase encargada de la interaccion con el usuario.
+ *
+ * @author Abril Palencia y Marco Fuentes.
+ * @since 15/02/2019
+ */
 /**
  *
  * @author Marco Fuentes
@@ -36,14 +42,6 @@ public class Maim {
             System.out.println("Error!");
         }
 
-        //separar cada elemento
-        for (int a = 0; a < arreglo.size(); a++) {
-            String[] caracteres = arreglo.get(a).split("");
-            ArrayList<String> operacion = new ArrayList<>();
-            for (int i = 0; i < caracteres.length; i++) {
-                operacion.add(caracteres[i]);
-            }
-
             //pedir la implementacion del stack al usuario
             System.out.println("Que implementacion desea para el stack? ");
             System.out.println("1. ArrayList");
@@ -55,6 +53,15 @@ public class Maim {
             FactoryStak obj1 = new FactoryStak();
             Stack lista = obj1.factoryStack(op);
             Calculator calculator = new Calculator();
+
+            //separar cada elemento
+             for (int a = 0; a < arreglo.size(); a++) {
+            String[] caracteres = arreglo.get(a).split("");
+            ArrayList<String> operacion = new ArrayList<>();
+            for (int i = 0; i < caracteres.length; i++) {
+                operacion.add(caracteres[i]);
+            }
+
             for (int car = 0; car < operacion.size(); car++) {
                 int num;
                 String caracter = operacion.get(car);
@@ -71,6 +78,7 @@ public class Maim {
                 }
             }
             System.out.println("resultado = " + lista.peek());
+            lista.pop();
         }
     }
 }
