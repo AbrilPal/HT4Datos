@@ -34,7 +34,7 @@ public class Maim {
         ArrayList<String> arreglo = new ArrayList<String>();
         try {
             Stream<String> lines = Files.lines(
-                    Paths.get(System.getProperty("user.dir") + "\\src\\datos.txt"),
+                    Paths.get(System.getProperty("user.dir") + "/datos.txt"),
                     StandardCharsets.UTF_8
             );
             lines.forEach(a -> arreglo.add(a));
