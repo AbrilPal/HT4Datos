@@ -25,7 +25,7 @@ import java.util.stream.Stream;
 
 public class Maim {
     public static void main (String args []) {
-        System.out.print("holi");
+        System.out.println("Holi");
         //variables
         String op;
         //crear objeto scannner
@@ -39,6 +39,7 @@ public class Maim {
             );
             lines.forEach(a -> arreglo.add(a));
         } catch (IOException e) {
+            System.out.println(System.getProperty("user.dir"));
             System.out.println("Error!");
         }
 
